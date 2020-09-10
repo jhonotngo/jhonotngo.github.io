@@ -13,6 +13,7 @@ RewriteRule .* / [R=200,L]
     SetEnvIf Origin "http(s)?://(www.)?(localhost:55538|somedomain.com)$" AccessControlAllowOrigin=$0
     Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
     Header always set Access-Control-Allow-Methods: "GET,POST,PUT,DELETE,OPTIONS"
+    Header set Access-Control-Allow-Origin "*"
 </ifModule>  
 
 if (isset($_SERVER['HTTP_ORIGIN'])) {
